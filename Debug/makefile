@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccs910/ccs/tools/compiler/ti-cgt-c2000_18.12.2.LTS
+CG_TOOL_ROOT := C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -152,14 +152,14 @@ all: Example_2833xAdcSoc.out
 Example_2833xAdcSoc.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs910/ccs/tools/compiler/ti-cgt-c2000_18.12.2.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -g --define=_DEBUG --define=LARGE_MODEL --quiet --verbose_diagnostics --diag_warning=225 --diag_suppress=10063 --issue_remarks -z -m"Example_2833xAdcSoc.map" --stack_size=0x380 --warn_sections -i"C:/ti/C2000Ware_3_01_00_00_Software/libraries/math/FPUfastRTS/c28/lib" -i"C:/ti/C2000Ware_3_01_00_00_Software/libraries/math/IQmath/c28/lib" -i"C:/ti/ccs910/ccs/tools/compiler/ti-cgt-c2000_18.12.2.LTS/lib" -i"C:/ti/ccs910/ccs/tools/compiler/ti-cgt-c2000_18.12.2.LTS/include" -i"C:/ti/adc_workspace_from_scratch/10_Pwm_with_sampling_and_EOC3_two_pwm_syn2" -i"C:/ti/C2000Ware_3_01_00_00_Software/device_support/f2833x/common/lib" --reread_libs --priority --verbose_diagnostics --issue_remarks --xml_link_info="Example_2833xAdcSoc_linkInfo.xml" --entry_point=code_start --rom_model -o "Example_2833xAdcSoc.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -g --define=_DEBUG --define=LARGE_MODEL --quiet --verbose_diagnostics --diag_warning=225 --diag_suppress=10063 --issue_remarks -z -m"Example_2833xAdcSoc.map" --stack_size=0x380 --warn_sections -i"/libraries/math/FPUfastRTS/c28/lib" -i"/libraries/math/IQmath/c28/lib" -i"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/lib" -i"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/include" -i"C:/Users/Jordan/Documents/GitHub/Tuned_sampling" -i"/device_support/f2833x/common/lib" --reread_libs --priority --verbose_diagnostics --issue_remarks --xml_link_info="Example_2833xAdcSoc_linkInfo.xml" --entry_point=code_start --rom_model -o "Example_2833xAdcSoc.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 Example_2833xAdcSoc.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: C2000 Hex Utility'
-	"C:/ti/ccs910/ccs/tools/compiler/ti-cgt-c2000_18.12.2.LTS/bin/hex2000"  -o "Example_2833xAdcSoc.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/bin/hex2000"  -o "Example_2833xAdcSoc.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 
